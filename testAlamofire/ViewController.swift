@@ -20,8 +20,8 @@ class ViewController: UIViewController {
             .responseJSON { response in
                 switch response.result {
                 case .success:
-                    let decoder: JSONDecoder = JSONDecoder()
                     do {
+                        let decoder: JSONDecoder = JSONDecoder()
                         // decode関数の引数にはJSONからマッピングさせたいクラスをと実際のデータを指定する
                         let articles: [Article] = try decoder.decode([Article].self, from: response.data!)
                         print(articles)
